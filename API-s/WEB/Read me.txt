@@ -1,0 +1,40 @@
+OpenAI HTTP Server
+The OpenAI HTTP Server is a Python application that creates a basic web interface for generating text completions using the OpenAI GPT-3.5 engine (davinci). This interface allows you to enter a text prompt and receive a generated text completion response from the OpenAI API.
+
+Prerequisites
+Before running the OpenAI HTTP Server, make sure you have the following:
+Python 3.6 or higher installed.
+The required Python packages installed. You can install them using the following command:
+pip install requests
+
+Configuration
+In order to use the OpenAI HTTP Server, you need to provide your OpenAI API key.
+
+Replace the OPENAI_API_KEY variable in the server.py file with your actual OpenAI API key.
+
+Adjust the max_tokens parameter in the do_POST method to control the length of the generated text.
+
+Usage
+Start the HTTP server by running the following command in your terminal:
+python server.py
+Once the server is running, open your web browser and navigate to http://localhost:8000.
+
+You will be presented with a simple web form where you can enter your text prompt.
+
+After submitting the prompt, the server will send a request to the OpenAI API and display the generated text completion as the response on the web page.
+
+Example Usage
+Open your web browser and navigate to http://localhost:8000.
+
+Enter your text prompt in the provided input field, such as: "Once upon a time..."
+
+Click the "Submit" button.
+
+The server will send a request to the OpenAI API and display the generated text completion on the web page.
+
+Important Notes
+This application is a basic example for interacting with the OpenAI API through a simple web interface. You may need to customize and enhance it based on your specific requirements and use cases.
+
+Make sure to follow the terms of use and guidelines provided by OpenAI when using their API.
+
+The provided code is for educational purposes and may require further security enhancements if used in production.

@@ -1,0 +1,51 @@
+OpenAI SOAP Server
+The OpenAI SOAP Server is a Python application that utilizes the Spyne library to create a SOAP-based API for generating text completions using the OpenAI GPT-3.5 engine (davinci). This server allows you to send a text prompt and receive a generated text completion response from the OpenAI API.
+
+Prerequisites
+Before running the OpenAI SOAP Server, make sure you have the following:
+Python 3.6 or higher installed.
+The required Python packages installed. You can install them using the following command:
+pip install spyne requests
+
+Configuration
+In order to use the OpenAI SOAP Server, you need to provide your OpenAI API key and configure the desired parameters for text generation.
+
+Replace the OPENAI_API_KEY variable in the server.py file with your actual OpenAI API key.
+
+Adjust the max_tokens parameter in the generate_response method to control the length of the generated text.
+
+Usage
+Start the SOAP server by running the following command in your terminal:
+python server.py
+
+Once the server is running, you can send a SOAP request to the server endpoint using any SOAP client. The server endpoint is http://localhost:8000.
+
+The SOAP request should include a prompt parameter, which is the text prompt you want to use for generating the text completion.
+
+The server will respond with the generated text completion based on the provided prompt.
+
+Example SOAP Request
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:web="http://spyne.io/complex/soap/web/tutorial">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <web:generate_response>
+            <web:prompt>Once upon a time</web:prompt>
+        </web:generate_response>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+Example SOAP Response
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:web="http://spyne.io/complex/soap/web/tutorial">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <web:generate_responseResponse>
+            <web:return>...generated text completion...</web:return>
+        </web:generate_responseResponse>
+    </soapenv:Body>
+</soapenv:Envelope>
+Important Notes
+This application is a basic example for integrating the OpenAI API with a SOAP server. You may need to customize and enhance it based on your specific requirements and use cases.
+
+Make sure to follow the terms of use and guidelines provided by OpenAI when using their API.
