@@ -9,7 +9,7 @@ import json
 import urllib.parse
 import requests
 
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "Your Api key"
 OPENAI_API_ENDPOINT = "https://api.openai.com/v1/engines/davinci/completions"
 
 class MyHandler(http.server.BaseHTTPRequestHandler):
